@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Chat Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Join Chat Room</h1>
+        <input id="username" type="text" placeholder="Choose a username" required />
+        <input id="color" type="color" required />
+        <button id="connect">Connect</button>
+    </div>
+    <script>
+        const connectButton = document.getElementById('connect');
+        connectButton.addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            const color = document.getElementById('color').value;
+
+            if (username) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('color', color);
+                window.location.href = 'chat.html';
+            } else {
+                alert('Please enter a username!');
+            }
+        });
+    </script>
+</body>
+</html>
